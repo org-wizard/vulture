@@ -9,6 +9,7 @@ class VultureInputException(Exception):
 
 
 def _safe_eval(node, default):
+    # EDIT
     """
     Safely evaluate the Boolean expression under the given AST node.
 
@@ -100,7 +101,7 @@ class LoggingList(list):
     def __init__(self, typ, verbose):
         self.typ = typ
         self._verbose = verbose
-        return list.__init__(self)
+        list.__init__(self)
 
     def append(self, item):
         if self._verbose:
@@ -112,7 +113,7 @@ class LoggingSet(set):
     def __init__(self, typ, verbose):
         self.typ = typ
         self._verbose = verbose
-        return set.__init__(self)
+        set.__init__(self)
 
     def add(self, name):
         if self._verbose:

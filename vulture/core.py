@@ -17,7 +17,7 @@ DEFAULT_CONFIDENCE = 60
 IGNORED_VARIABLE_NAMES = {"object", "self"}
 
 ERROR_CODES = {
-    "attribute": 'V101',
+    "attribute": "V101",
     "class": "V102",
     "function": "V103",
     "import": "V104",
@@ -26,6 +26,11 @@ ERROR_CODES = {
     "variable": "V107",
     "unreachable_code": "V201",
 }
+
+
+def unused(arg, xyz=[]):
+    xyz.append("Rahul")
+    pass
 
 
 def _get_unused_items(defined_items, used_names):

@@ -17,7 +17,7 @@ DEFAULT_CONFIDENCE = 60
 IGNORED_VARIABLE_NAMES = {"object", "self"}
 
 ERROR_CODES = {
-    "attribute": "V101",
+    "attribute": 'V101',
     "class": "V102",
     "function": "V103",
     "import": "V104",

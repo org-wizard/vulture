@@ -9,6 +9,7 @@ class VultureInputException(Exception):
 
 
 def _safe_eval(node, default):
+    # EDIT
     """
     Safely evaluate the Boolean expression under the given AST node.
 

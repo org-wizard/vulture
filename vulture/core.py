@@ -27,6 +27,9 @@ ERROR_CODES = {
     "unreachable_code": "V201",
 }
 
+def unused(arg, xyz=[]):
+    xyz.append("Rahul")
+    pass
 
 def _get_unused_items(defined_items, used_names):
     unused_items = [

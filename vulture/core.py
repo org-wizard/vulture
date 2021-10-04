@@ -17,7 +17,7 @@ DEFAULT_CONFIDENCE = 60
 IGNORED_VARIABLE_NAMES = {"object", "self"}
 
 ERROR_CODES = {
-    "attribute": 'V101',
+    "attribute": "V101",
     "class": "V102",
     "function": "V103",
     "import": "V104",
@@ -144,13 +144,12 @@ class Item:
         filename = utils.format_path(self.filename)
         if self.typ == "unreachable_code":
             return f"# {self.message} ({filename}:{self.first_lineno})"
-        else:
-            prefix = ""
-            if self.typ in ["attribute", "method", "property"]:
-                prefix = "_."
-            return "{}{}  # unused {} ({}:{:d})".format(
-                prefix, self.name, self.typ, filename, self.first_lineno
-            )
+        prefix = ""
+        if self.typ in ["attribute", "method", "property"]:
+            prefix = "_."
+        return "{}{}  # unused {} ({}:{:d})".format(
+            prefix, self.name, self.typ, filename, self.first_lineno
+        )
 
     def _tuple(self):
         return (self.filename, self.first_lineno, self.name)

@@ -33,7 +33,7 @@ def _get_last_child_with_lineno(node):
         # Ignore non-AST objects like "is_async", "level" and "nl".
         if isinstance(last_field, ast.AST):
             return last_field
-        elif isinstance(last_field, list) and last_field:
+        if isinstance(last_field, list) and last_field:
             return last_field[-1]
     return None
 
@@ -58,11 +58,10 @@ def get_last_line_number(node):
         last_child = _get_last_child_with_lineno(node)
         if last_child is None:
             return max_lineno
-        else:
-            try:
-                max_lineno = max(max_lineno, last_child.lineno)
-            except AttributeError:
-                pass
+        try:
+            max_lineno = max(max_lineno, last_child.lineno)
+        except AttributeError:
+            pass
         node = last_child
 
 
